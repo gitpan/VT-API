@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               VT-API
-version:            0.10
+version:            0.11
 abstract:           Perl implementation of VirusTotal Public API
 author:
     - Alexander Nusov <cpan@sancode.net>

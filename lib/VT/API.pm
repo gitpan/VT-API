@@ -6,7 +6,7 @@ use JSON;
 use HTTP::Request::Common;
 use LWP::UserAgent;
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 sub new {
     croak('Options to VT::API should be key/value pairs, '.
@@ -166,7 +166,7 @@ VT::API - Perl implementation of VirusTotal Public API
 
 =head1 VERSION
 
-This documentation refers to VT::API version 0.10
+This documentation refers to VT::API version 0.11
 
 
 =head1 SYNOPSYS
@@ -188,9 +188,14 @@ This documentation refers to VT::API version 0.10
     
     # Submit and scan a URL.
     my $res4 = $api->scan_url('http://www.example.com/');
+    my $scan_id;
+    
+    if ($res->{result}) {
+        $scan_id = $res->{scan_id};
+    }
     
     # Make comments on files and URLs.
-    my $res5 = $api->make_comment('file path or URL', 'Your comment', 'tag1,tag2');
+    my $res5 = $api->make_comment('file hash or URL', 'Comment', ['tag1', 'tag2']);
     
     ...
 
