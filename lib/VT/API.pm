@@ -6,7 +6,7 @@ use JSON;
 use HTTP::Request::Common;
 use LWP::UserAgent;
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 sub new {
     croak('Options to VT::API should be key/value pairs, '.
@@ -166,10 +166,10 @@ VT::API - Perl implementation of VirusTotal Public API
 
 =head1 VERSION
 
-This documentation refers to VT::API version 0.11
+This documentation refers to VT::API version 0.12
 
 
-=head1 SYNOPSYS
+=head1 SYNOPSIS
 
     use VT::API;
     
@@ -190,7 +190,7 @@ This documentation refers to VT::API version 0.11
     my $res4 = $api->scan_url('http://www.example.com/');
     my $scan_id;
     
-    if ($res->{result}) {
+    if ($res4->{result}) {
         $scan_id = $res->{scan_id};
     }
     
@@ -229,15 +229,15 @@ VT::API methods.
 
 =head2 my $api = VT::API->new(key => 'Public Key')
 
-=head2 $api->get_file_report( $resource )
+=head2 $api->get_file_report($resource)
 
-=head2 $api->scan_file( $file )
+=head2 $api->scan_file($file)
 
-=head2 $api->get_url_report( $resource )
+=head2 $api->get_url_report($resource)
 
-=head2 $api->scan_url( $url )
+=head2 $api->scan_url($url)
 
-=head2 $api->make_comment( $file_or_url, $comment, $tags )
+=head2 $api->make_comment($file_or_url, $comment, $tags)
 
 =head2 errstr()
 
@@ -278,7 +278,7 @@ Written by Alexander Nusov.
 
 =head1 COPYRIGHTS AND LICENSE
 
-Copyright (C) 2010, Alexander Nusov <cpan at sancode.net>
+Copyright (C) 2010, Alexander Nusov <alexander.nusov+cpan <at> gmail.com>
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
